@@ -4,6 +4,10 @@ const INIT_AUDIOS = [
         path: 'assets/sound/music/gameover.mp3'
     },
     {
+        key: 'win',
+        path: 'assets/sound/music/win.wav'
+    },
+    {
         key: 'goomba-stomp',
         path: 'assets/sound/effects/goomba-stomp.wav'
     },
