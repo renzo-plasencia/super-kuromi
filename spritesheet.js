@@ -7,7 +7,7 @@ const INIT_SPRITESHEETS = [
     },
     {
         key: 'kuromi_caminando',
-        path: 'kuromi_walking.png',
+        path: 'Kuromi_walking.png',
         frameWidth: 80,
         frameHeight: 80
     },
