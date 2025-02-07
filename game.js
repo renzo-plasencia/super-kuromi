@@ -11,6 +11,9 @@ import { createEnemies } from './level/enemies.js';
 import { createCoins } from './level/coins.js';
 import { killHK } from './level/score.js';
 
+///////////////////////// REEMPLAZAR POR EL VÍDEO QUE QUIERES ///////////////////////////
+
+let videoLink = "https://youtu.be/sDMxQF18yvA?si=Y1obs6lfU7Wen9TE";
 
 /* CONFIGURACIÓN GLOBAL PHASER */
 const config = {
@@ -47,10 +50,9 @@ loadFont('MarioBrosFont', 'assets/fonts/SuperMario.ttf').then(() => {
     console.error('Error al cargar la fuente:', error);
 });
 //Posición inicial del personaje
-let init_position = 2500;
+let init_position = 25;
 //Tamaño del nivel
 let level_size = 3345;
-
 
 /* 
 FALTANTES:
@@ -212,12 +214,18 @@ function update() {
         this.add.text(2700, 200, '¿Quieres ser mi\n San Valentin?', { font: '42px MarioBrosFont', fill: '#C51D34' });
         this.add.text(2850, 325, '1. Opcion 1: SI', { font: '20px MarioBrosFont', fill: '#ffffff' });
         this.add.text(2850, 375, '2. Opcion 2: NO', { font: '20px MarioBrosFont', fill: '#ffffff' });
+        
+        this.optionSelected = false;
 
         this.input.keyboard.once('keydown-ONE', () => {
-            window.open("https://youtu.be/sDMxQF18yvA?si=Y1obs6lfU7Wen9TE", "_blank");
+            if (!this.optionSelected) {
+                this.optionSelected = true; // Evitar múltiples ejecuciones
+                window.open(videoLink, "_blank");
+            }
         });
-
+        
         this.input.keyboard.once('keydown-TWO', () => {
+            this.optionSelected = true; // También evitar spam en la opción 2
             this.scene.restart();
         });
     }
