@@ -51,6 +51,8 @@ loadFont('MarioBrosFont', 'assets/fonts/SuperMario.ttf').then(() => {
 });
 //Posición inicial del personaje
 let init_position = 25;
+
+let var_prueba = 1;
 //Tamaño del nivel
 let level_size = 3345;
 
